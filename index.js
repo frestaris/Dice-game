@@ -1,6 +1,7 @@
 const player1 = document.querySelector(".img1");
 const player2 = document.querySelector(".img2");
 const result = document.querySelector("h1");
+const resetBtn = document.querySelector(".reset-btn");
 
 function randomNumber() {
   return Math.floor(Math.random() * 6) + 1;
@@ -9,6 +10,13 @@ function randomNumber() {
 function rollDice() {
   rollDice1();
   rollDice2();
+  if (player1.src > player2.src) {
+    result.textContent = "🚩 P.1 wins!";
+  } else if (player1.src < player2.src) {
+    result.textContent = "🚩 P.2 wins!";
+  } else {
+    result.textContent = "Draw!";
+  }
 }
 function rollDice1() {
   let random1 = randomNumber();
@@ -23,10 +31,4 @@ function rollDice2() {
 
 rollDice();
 
-if (player1.src > player2.src) {
-  result.textContent = "🚩 P.1 wins!";
-} else if (player1.src < player2.src) {
-  result.textContent = "🚩 P.2 wins!";
-} else {
-  result.textContent = "Draw!";
-}
+resetBtn.addEventListener("click", rollDice);

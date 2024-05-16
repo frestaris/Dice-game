@@ -32,9 +32,14 @@ img {
   width: 80%;
 }
 
-footer {
+.reset-btn {
   margin-top: 5%;
-  color: #eeeeee;
-  text-align: center;
+  background-color: #9c060c;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
   font-family: "Indie Flower", cursive;
+  cursor: pointer;
 }
